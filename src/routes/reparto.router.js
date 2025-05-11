@@ -4,24 +4,24 @@ const router = express.Router();
 router.get('/reparto/:actor', (req, res) => {
     try {
         const trailersData = req.app.locals.trailersData;
-        const searchActor = req.params.actor.toLowerCase().trim(); // Get and clean the search term
+        const searchActor = req.params.actor.toLowerCase().trim(); 
         
-        // Filter and map the results
+       
         const resultados = trailersData
             .filter(trailer => {
                 if (!trailer.reparto) return false;
                 
-                // Split the comma-separated string and clean each actor name
+                
                 const actores = trailer.reparto.split(',')
                     .map(actor => actor.trim().toLowerCase());
                 
-                // Check if any actor matches the search
+                
                 return actores.some(actor => 
                     actor.includes(searchActor)
                 );
             })
             .map(trailer => {
-                // Split and filter to only show matching actors
+                
                 const actoresFiltrados = trailer.reparto.split(',')
                     .map(actor => actor.trim())
                     .filter(actor => 
@@ -30,8 +30,8 @@ router.get('/reparto/:actor', (req, res) => {
                 
                 return {
                     titulo: trailer.titulo,
-                    reparto: actoresFiltrados.join(', '), // Join back to string
-                    poster: trailer.poster // Optional: include poster
+                    reparto: actoresFiltrados.join(', '),
+                    poster: trailer.poster
                 };
             });
 
