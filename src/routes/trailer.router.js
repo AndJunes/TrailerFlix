@@ -4,9 +4,9 @@ const router = express.Router();
 router.get('/trailer/:id', (req, res) => {
     try {
         const trailersData = req.app.locals.trailersData;
-        const searchId = parseInt(req.params.id); // Convert id to number
+        const searchId = parseInt(req.params.id); 
         
-        // Find the trailer with matching ID
+        
         const resultado = trailersData.find(trailer => 
             trailer.id === searchId
         );
@@ -18,11 +18,11 @@ router.get('/trailer/:id', (req, res) => {
             });
         }
 
-        // Create response with only id, titulo, and trailer (with fallback)
+        
         const respuesta = {
             id: resultado.id,
             titulo: resultado.titulo,
-            trailer: resultado.trailer || null // Fallback to null if trailer doesn't exist
+            trailer: resultado.trailer || null 
         };
 
         res.status(200).json(respuesta);
