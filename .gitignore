@@ -1,0 +1,17 @@
+#Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.local
+.DS_Store
+coverage/
+.nyc_output/
+dist/
+build/
+
+#Optional: Framework-specific folders (e.g., Next.js, Nuxt.js)
+.next/
+.nuxt/
+.cache/

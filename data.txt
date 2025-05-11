@@ -1,0 +1,23 @@
+definitiva/
+├── database/
+│    ├── trailerflix.json
+├── src/
+│   └── routes/
+│    ├── catalogo.router.js
+│    ├── categoria.router.js
+│    ├── main.router.js
+│    ├── reparto.router.js
+│    ├── titulo.router.js
+│    ├── trailer.router.js
+├── views/
+│   ├── img/
+│    ├── inicio.png
+│    ├── logo.jpg
+│   ├── posters/
+│   ├── scripts/
+│   │   └── catalogo.js
+│   ├── styles/
+│   │   └── styles.css
+│   └── index.html
+├── .env
+└── app.js

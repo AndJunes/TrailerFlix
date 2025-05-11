@@ -1,0 +1,24 @@
+{
+  "name": "trilerflix",
+  "version": "1.0.0",
+  "description": "sistema de catalogo de archivos",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Andrea",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.6",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "git": "^0.1.5",
+    "http": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
