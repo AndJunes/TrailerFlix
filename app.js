@@ -4,20 +4,20 @@ const path = require('path');
 const fs = require('fs');
 const app = express();
 
-// Configurar EJS como motor de plantillas
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views')); // Asegurar ruta completa
 
-// Configurar archivos estáticos (una sola configuración principal)
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views')); 
+
+
 app.use(express.static(path.join(__dirname, 'views')));
 
-// Configuraciones adicionales para rutas específicas (opcional)
+
 app.use('/styles', express.static(path.join(__dirname, 'views', 'styles')));
 app.use('/posters', express.static(path.join(__dirname, 'views', 'posters')));
 app.use('/img', express.static(path.join(__dirname, 'views', 'img')));
 app.use('/scripts', express.static(path.join(__dirname, 'views', 'scripts')));
 
-// Resto de tu configuración...
+
 const dataPath = path.join(__dirname, 'database', process.env.DATA_FILE);
 let trailersData;
 try {
@@ -30,7 +30,7 @@ try {
 }
 app.locals.trailersData = trailersData;
 
-// Rutas
+
 const mainRouter = require('./src/routes/main.router');
 app.use(mainRouter);
 
